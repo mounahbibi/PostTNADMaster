@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
+    <title>PosteADMaster</title>
+    <!-- Bootstrap CSS -->
+    
+    <!----css3---->
+    
+    <!-- SLIDER REVOLUTION 4.x CSS SETTINGS -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap"
+        rel="stylesheet" />
+
+    <!--google material icon-->
+    <link href="https://fonts.googleapis.com/css2?family=Material+Icons" rel="stylesheet" />
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-lg bg-body-tertiary navbar-custom">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <img src="assets/logo.jpg" alt="ADMaster" style="max-height: 40px; margin-right: 10px;">
+                ADMaster
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+                <ul class="navbar-nav mx-auto mb-2 mb-lg-0 navbar-custom-list"> <!-- Utilisez la classe mx-auto pour centrer les éléments -->
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="dashboard">Accueil</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="liste-unite">Unité Organisationnelle</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="liste-user">Utilisateur</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="liste-groupe">Groupe</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="liste-permission">Permission</a>
+                    </li>
+                </ul>
+                <form class="d-flex" role="search">
+                    <button class="btn btn-outline-primary" type="button" onclick="deconnecter()">
+                        <a href="login"><i class="material-icons" style="color: rgb(214, 39, 8);">exit_to_app</i> </a>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </nav>
+    <style>
+        .main-content {
+            background-color: #f2f2f2; /* Gris clair */
+            padding: 20px; /* Ajoutez un peu d'espacement intérieur pour séparer le contenu de l'arrière-plan */
+        }
+    </style>
+    
+    <div class="main-content">
+        <div class="container-fluid">
+            <div class="row justify-content-center align-items-center">
+                <div class="col-md-6">
+                    <form [formGroup]="addUniteForm" (ngSubmit)="addUnite()" style="background-color: white; padding: 20px; border-radius: 10px; position: relative;">
+                        
+    
+                        <h2 style="font-weight: bold; color: black; margin-bottom: 20px;">Complétez les informations de l'unité organisationnelle</h2>
+    
+                        <div class="row mb-3">
+                            <!-- OU -->
+                            <div class="col-md-4">
+                                <label for="ou" class="form-label">Nom unité</label>
+                                <input type="text" id="ou" formControlName="ou" class="form-control" placeholder="Entrez l'OU">
+                            </div>
+                            <!-- Description -->
+                            <div class="col-md-4">
+                                <label for="description" class="form-label">Description</label>
+                                <input type="text" id="description" formControlName="description" class="form-control" placeholder="Entrez la description">
+                            </div>
+                            <div class="col-md-4">
+                                <label for="L" class="form-label">Ville</label>
+                                <input type="text" id="L" formControlName="L" class="form-control" placeholder="Entrez L">
+                            </div>
+                        </div>
+    
+                        <div class="row mb-3">
+                            <!-- Champ L -->
+                            
+    
+                            <!-- Champ C -->
+                            <div class="col-md-4">
+                                <label for="C" class="form-label">Pays</label>
+                                <input type="text" id="C" formControlName="C" class="form-control" placeholder="Entrez C">
+                            </div>
+    
+                            <!-- Champ Co -->
+                            <div class="col-md-4">
+                                <label for="Co" class="form-label">Code Postale</label>
+                                <input type="text" id="Co" formControlName="Co" class="form-control" placeholder="Entrez Co">
+                            </div>
+                            <div class="col-md-4">
+                                <label for="countryCode" class="form-label">Departement</label>
+                                <input type="number" id="countryCode" formControlName="countryCode" class="form-control" placeholder="Entrez le code de pays">
+                            </div>
+                        </div>
+    
+                        <div class="row mb-3">
+                            <!-- Champ Code de pays -->
+                            
+    
+                            <!-- Champ Code postal -->
+                            <div class="col-md-4">
+                                <label for="postalCode" class="form-label">Adresse</label>
+                                <input type="number" id="postalCode" formControlName="postalCode" class="form-control" placeholder="Entrez le code postal">
+                            </div>
+                           
+                        </div>
+                        
+                        <div class="row mb-3">
+                            <div class="col-md-12" style="display: flex; justify-content: flex-end;">
+                                <a href="liste-unite" class="btn btn-warning" style="margin-right: 10px;">Annuler</a>
+                                <a href="liste-unite" class="btn btn-primary">Ajouter</a>
+                                
+                            </div>
+                        </div>
+                        
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="footer"  style="background-color: #f2f2f2;">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-6">
+                    <nav class="d-flex">
+                        <ul class="m-0 p-0">
+                            <li>
+                                <a href="dashboard"> Accueil</a>
+                            </li>
+                            <li>
+                                <a href="profile"> Profile </a>
+                            </li>
+                            <li>
+                                <a href="login"> Déconnecter </a>
+                            </li>
+                           
+                        </ul>
+                    </nav>
+                </div>
+                <div class="col-md-6">
+                    <p class="copyright d-flex justify-content-end">
+                        &copy; 2024 PosteTnADMaster
+                    </p>
+                </div>
+                
+            </div>
+        </div>
+    </footer>
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="js/jquery-3.3.1.slim.min.js"></script>
+<script src="js/popper.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/jquery-3.3.1.min.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function () {
+$("#sidebarCollapse").on("click", function () {
+    $("#sidebar").toggleClass("active");
+    $("#content").toggleClass("active");
+});
+
+$(".more-button,.body-overlay").on("click", function () {
+    $("#sidebar,.body-overlay").toggleClass("show-nav");
+});
+});
+</script>
+</body>
+
+</html> 
+   
+    
+                        

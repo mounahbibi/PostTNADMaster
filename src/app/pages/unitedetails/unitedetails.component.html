@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
+    <title>PosteADMaster</title>
+    <!-- Bootstrap CSS -->
+
+    <!----css3---->
+
+    <!-- SLIDER REVOLUTION 4.x CSS SETTINGS -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet" />
+
+    <!--google material icon-->
+    <link href="https://fonts.googleapis.com/css2?family=Material+Icons" rel="stylesheet" />
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-lg bg-body-tertiary navbar-custom mb-4">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <img src="assets/logo.jpg" alt="ADMaster" style="max-height: 40px; margin-right: 10px;">
+                ADMaster
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+                <ul class="navbar-nav mx-auto mb-2 mb-lg-0 navbar-custom-list"> <!-- Utilisez la classe mx-auto pour centrer les éléments -->
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="dashboard">Accueil</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="liste-unite">Unité Organisationnelle</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="liste-user">Utilisateur</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="liste-groupe">Groupe</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="liste-permission">Permission</a>
+                    </li>
+                </ul>
+                <form class="d-flex" role="search">
+                    <button class="btn btn-outline-primary" type="button" onclick="deconnecter()">
+                        <a href="login"><i class="material-icons" style="color: rgb(214, 39, 8);">exit_to_app</i> </a>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </nav>
+    <div class="main-content">
+        <div class="row justify-content-center" style="background-color: white;">
+            <div class="col-md-4">
+                <div class="d-flex justify-content-between align-items-center bg-white p-3">
+                    <div class="text-center">
+                        <h2 class="m-0">Unités</h2>
+                    </div>
+                </div>
+                <div style="height: 20px;"></div>
+                <div class="table-responsive">
+                    <table class="table table-hover">
+                        <!-- Contenu du premier tableau -->
+                    </table>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="d-flex justify-content-between align-items-center bg-white p-3">
+                    <div class="text-center">
+                        <h2 class="m-0">Utilisateurs</h2>
+                    </div>
+                </div>
+                <div style="height: 20px;"></div>
+                <div class="table-responsive">
+                    <table class="table table-hover">
+                        <!-- Contenu du deuxième tableau -->
+                    </table>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="d-flex justify-content-between align-items-center bg-white p-3">
+                    <div class="text-center">
+                        <h2 class="m-0">Groupes</h2>
+                    </div>
+                </div>
+                <div style="height: 20px;"></div>
+                <div class="table-responsive">
+                    <table class="table table-hover">
+                        <!-- Contenu du troisième tableau -->
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    

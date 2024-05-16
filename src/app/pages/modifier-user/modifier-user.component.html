@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
+    <title>PosteADMaster</title>
+    <!-- Bootstrap CSS -->
+
+    <!----css3---->
+
+    <!-- SLIDER REVOLUTION 4.x CSS SETTINGS -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet" />
+
+    <!--google material icon-->
+    <link href="https://fonts.googleapis.com/css2?family=Material+Icons" rel="stylesheet" />
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-lg bg-body-tertiary navbar-custom mb-4">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <img src="assets/logo.jpg" alt="ADMaster" style="max-height: 40px; margin-right: 10px;">
+                ADMaster
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+                <ul class="navbar-nav mx-auto mb-2 mb-lg-0 navbar-custom-list"> <!-- Utilisez la classe mx-auto pour centrer les éléments -->
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="dashboard">Accueil</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="liste-unite">Unité Organisationnelle</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="liste-user">Utilisateur</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="liste-groupe">Groupe</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="liste-permission">Permission</a>
+                    </li>
+                </ul>
+                <form class="d-flex" role="search">
+                    <button class="btn btn-outline-primary" type="button" onclick="deconnecter()">
+                        <a href="login"><i class="material-icons" style="color: rgb(214, 39, 8);">exit_to_app</i> </a>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </nav>
+    <style>
+        .main-content {
+                background-color: #f2f2f2; /* Gris clair */
+                padding: 20px; /* Ajoutez un peu d'espacement intérieur pour séparer le contenu de l'arrière-plan */
+            }
+    </style>
+    
+    <div class="main-content">
+        <div class="container-fluid">
+            <div class="row justify-content-center align-items-center">
+                <div class="col-md-6">
+                    <form  [formGroup]="updateUserForm" (ngSubmit)="updateUser()" style="background-color: white; padding: 20px; border-radius: 10px; position: relative;">
+                        <h2 style="font-weight: bold; color: black; margin-bottom: 20px;">Modifier un utilisateur</h2>
+                        
+                        <div class="row mb-3">
+                            <div class="col-md-4">
+                                <label for="cn" class="form-label">Nom commun</label>
+                                <input type="text" id="cn" formControlName="cn" class="form-control" placeholder="Entrez le nom commun">
+                            </div>
+                            <div class="col-md-4">
+                                <label for="givenName" class="form-label">Prénom</label>
+                                <input type="text" id="givenName" formControlName="givenName" class="form-control" placeholder="Entrez le prénom">
+                            </div>
+                            <div class="col-md-4">
+                                <label for="sn" class="form-label">Nom</label>
+                                <input type="text" id="sn" formControlName="sn" class="form-control" placeholder="Entrez le nom">
+                            </div>
+                        </div>
+                        
+                        <div class="row mb-3">
+                            <div class="col-md-4">
+                                <label for="telephone" class="form-label">Téléphone</label>
+                                <input type="text" id="telephone" formControlName="telephone" class="form-control" placeholder="Entrez le numéro de téléphone">
+                            </div>
+                            <div class="col-md-4">
+                                <label for="email" class="form-label">Adresse mail</label>
+                                <input type="email" id="email" formControlName="email" class="form-control" placeholder="Entrez l'adresse e-mail">
+                            </div>
+                            <div class="col-md-4">
+                                <label for="uid" class="form-label">Nom d'utilisateur principal</label>
+                                <input type="text" id="uid" formControlName="uid" class="form-control" placeholder="Entrez le nom d'utilisateur principal">
+                            </div>
+                        </div>
+                        
+                        <div class="row mb-3">
+                            <div class="col-md-4">
+                                <label for="ville" class="form-label">Ville</label>
+                                <input type="text" id="ville" formControlName="ville" class="form-control" placeholder="Entrez la ville">
+                            </div>
+                            <div class="col-md-4">
+                                <label for="pays" class="form-label">Pays</label>
+                                <input type="text" id="pays" formControlName="pays" class="form-control" placeholder="Entrez le pays">
+                            </div>
+                            <div class="col-md-4">
+                                <label for="idEmployee" class="form-label">ID Employee</label>
+                                <input type="text" id="idEmployee" formControlName="idEmployee" class="form-control" placeholder="Entrez l'ID employee">
+                            </div>
+                        </div>
+                        
+                        <div class="row mb-3">
+                            <div class="col-md-4">
+                                <label for="nomCompte" class="form-label">Nom de compte</label>
+                                <input type="text" id="nomCompte" formControlName="nomCompte" class="form-control" placeholder="Entrez le nom de compte">
+                            </div>
+                            <div class="col-md-4">
+                                <label for="codePostal" class="form-label">Code postal</label>
+                                <input type="text" id="codePostal" formControlName="codePostal" class="form-control" placeholder="Entrez le code postal">
+                            </div>
+                            <div class="col-md-4">
+                                <label for="password" class="form-label">Mot de passe</label>
+                                <input type="password" id="password" formControlName="password" class="form-control" placeholder="Entrez le mot de passe">
+                            </div>
+                            
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col-md-4">
+                                <label for="st" class="form-label">Departement</label>
+                                <input type="text" id="st" formControlName="st" class="form-control" placeholder="Entrez Departement">
+                            </div>
+                        </div>
+
+                        
+                        <div class="row mb-3">
+                            <div class="col-md-12" style="display: flex; justify-content: flex-end;">
+                                <a href="liste-user" class="btn btn-warning" style="margin-right: 10px;">Annuler</a>
+                                <button type="submit" class="btn btn-primary">Modifier</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <footer class="footer"  style="background-color: #f2f2f2;">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-6">
+                    <nav class="d-flex">
+                        <ul class="m-0 p-0">
+                            <li>
+                                <a href="dashboard"> Accueil</a>
+                            </li>
+                            <li>
+                                <a href="profile"> Profile </a>
+                            </li>
+                            <li>
+                                <a href="login"> Déconnecter </a>
+                            </li>
+                           
+                        </ul>
+                    </nav>
+                </div>
+                <div class="col-md-6">
+                    <p class="copyright d-flex justify-content-end">
+                        &copy; 2024 PosteTnADMaster
+                    </p>
+                </div>
+                
+            </div>
+        </div>
+    </footer>
+
+
+               
+         
+    
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="js/jquery-3.3.1.slim.min.js"></script>
+        <script src="js/popper.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/jquery-3.3.1.min.js"></script>
+    
+        <script type="text/javascript">
+            $(document).ready(function () {
+                $("#sidebarCollapse").on("click", function () {
+                    $("#sidebar").toggleClass("active");
+                    $("#content").toggleClass("active");
+                });
+    
+                $(".more-button,.body-overlay").on("click", function () {
+                    $("#sidebar,.body-overlay").toggleClass("show-nav");
+                });
+            });
+        </script>
+  
+</body>
+    </html>

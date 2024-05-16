@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
+    <title>PosteADMaster</title>
+    <!-- Bootstrap CSS -->
+    
+    <!----css3---->
+    
+    <!-- SLIDER REVOLUTION 4.x CSS SETTINGS -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap"
+        rel="stylesheet" />
+
+    <!--google material icon-->
+    <link href="https://fonts.googleapis.com/css2?family=Material+Icons" rel="stylesheet" />
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-lg bg-body-tertiary navbar-custom">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <img src="assets/logo.jpg" alt="ADMaster" style="max-height: 40px; margin-right: 10px;">
+                ADMaster
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+                <ul class="navbar-nav mx-auto mb-2 mb-lg-0 navbar-custom-list"> <!-- Utilisez la classe mx-auto pour centrer les éléments -->
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="dashboard">Accueil</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="liste-unite">Unité Organisationnelle</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="liste-user">Utilisateur</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="liste-groupe">Groupe</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Permission</a>
+                    </li>
+                </ul>
+                <form class="d-flex" role="search">
+                    <button class="btn btn-outline-primary" type="button" onclick="deconnecter()">
+                        <a href="login"><i class="material-icons" style="color: rgb(214, 39, 8);">exit_to_app</i> </a>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </nav>
+    
+    
+    <style>
+        .main-content {
+            background-color: #f2f2f2; /* Gris clair */
+            padding: 20px; /* Ajoutez un peu d'espacement intérieur pour séparer le contenu de l'arrière-plan */
+        }
+    </style>
+
+        <!-- Page Content  -->
+       
+           
+
+            <div class="main-content">
+                <div class="row">
+                    <div class="col-lg-3 col-md-6 col-sm-6">
+                        <div class="card card-stats">
+                            <div class="card-header">
+                                <style>
+                                    .icon-warning .material-icons {
+                                        color: green; /* Couleur verte */
+                                    }
+                                </style>
+                                
+                                <div class="icon icon-warning">
+                                    <a href="liste-unite"> <span class="material-icons">business</span></a>
+                                </div>
+                            </div>
+                            <div class="card-content">
+                                <a href="liste-unite"><p class="category"><strong>Unités Organisationnelles</strong></p></a>
+                                <h3 class="card-title">70</h3>
+                            </div>
+                        </div>
+                        
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-sm-6">
+                        <div class="card card-stats">
+                            <div class="card-header">
+                                <style>
+                                    .icon-rose .material-icons {
+                                        color: rgb(153, 14, 14); /* Couleur rouge */
+                                    }
+                                </style>
+                                
+                                <div class="icon icon-rose">
+                                    <a href="liste-user"> <span class="material-icons">person</span></a>
+                                </div>
+                                
+                            </div>
+                            
+                            <div class="card-content">
+                                <a href="liste-user"> <p class="category"><strong>Utilisateurs</strong></p></a>
+                                <h3 class="card-title">102</h3>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-3 col-md-6 col-sm-6">
+                        <div class="card card-stats">
+                            <div class="card-header">
+                                <style>
+                                    .icon-rose .material-icons {
+                                        color: rgb(142, 221, 14); /* Couleur rouge */
+                                    }
+                                </style>
+                                <div class="icon icon-success">
+                                    <a href="liste-group"><span class="material-icons">groupe</span></a>
+                                </div>
+                            </div>
+                            <div class="card-content">
+                                <a href="liste-groupe"><p class="category"><strong>Groupes</strong></p></a>
+                                <h3 class="card-title">23</h3>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-3 col-md-6 col-sm-6">
+                        <div class="card card-stats">
+                            <div class="card-header">
+                                <div class="icon icon-info">
+                                    <span class="material-icons">follow_the_signs</span>
+                                </div>
+                            </div>
+                            <div class="card-content">
+                                <p class="category"><strong>Permission</strong></p>
+                                <h3 class="card-title">245</h3>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-7 col-md-12">
+                        <div class="card" style="min-height: 485px">
+                            <div class="card-header card-header-text">
+                                <h3>Statistiques des Utilisateur dans unité</h3>
+                            </div><br>
+                            <br><br>
+                            <div class="card-content table-responsive">
+                            
+                                <div class="chart">
+                                    <div class="bar" style="height: 150%; background-color: #4CAF50;"></div>
+                                    <div class="bar" style="height: 80%; background-color: #2196F3;"></div>
+                                    <div class="bar" style="height: 120%; background-color: #FF9800;"></div>
+                                   
+                                    <div class="bar" style="height: 60%; background-color: #0389aa;"></div>
+                                    <div class="bar" style="height: 120%; background-color: #FF9800;"></div>
+                                    <div class="bar" style="height: 100%; background-color: #E91E63;"></div>
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-5 col-md-12">
+                        <div class="card" id="mapContainer" style="min-height: 485px"></div>
+                    </div>
+                </div>
+            </div>
+                <footer class="footer">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <nav class="d-flex">
+                                    <ul class="m-0 p-0">
+                                        <li>
+                                            <a href="dashboard"> Accueil</a>
+                                        </li>
+                                        <li>
+                                            <a href="profile"> Profile </a>
+                                        </li>
+                                        <li>
+                                            <a href="login"> Déconnecter </a>
+                                        </li>
+                                       
+                                    </ul>
+                                </nav>
+                            </div>
+                            <div class="col-md-6">
+                                <p class="copyright d-flex justify-content-end">
+                                    &copy; 2024 PosteTnADMaster
+                                </p>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </footer>
+            
+     
+   
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="js/jquery-3.3.1.slim.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery-3.3.1.min.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#sidebarCollapse").on("click", function () {
+                $("#sidebar").toggleClass("active");
+                $("#content").toggleClass("active");
+            });
+
+            $(".more-button,.body-overlay").on("click", function () {
+                $("#sidebar,.body-overlay").toggleClass("show-nav");
+            });
+        });
+    </script>
+</body>
+
+</html>
